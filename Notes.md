@@ -211,4 +211,10 @@ int numbers[5] = {1, 2, 3, 4, 5};
 
 // access elements
 cout << numbers[0] << endl; // 1
+
+// modify elements
+numbers[0] = 10;
+cout << numbers[0] << endl; // 10
 ```
+
+These were some of the basic data types in C++. There are more data types such as `long`, `long long`, `short`, `unsigned int`, `long double`, etc. which are used in specific scenarios. Please refer to the official documentation for more details.

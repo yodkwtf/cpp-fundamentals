@@ -218,3 +218,49 @@ cout << numbers[0] << endl; // 10
 ```
 
 These were some of the basic data types in C++. There are more data types such as `long`, `long long`, `short`, `unsigned int`, `long double`, etc. which are used in specific scenarios. Please refer to the official documentation for more details.
+
+## Conditionals
+
+Conditionals are used to make decisions in a program. We can use `if`, `else if`, and `else` statements to execute different blocks of code based on different conditions.
+
+#### If-Else Statement
+
+```cpp
+int age = 25;
+
+if (age >= 18) {
+  cout << "You are an adult" << endl;
+} else {
+  cout << "You are a minor" << endl;
+}
+```
+
+#### Ternary Operator
+
+We can also use the ternary operator to write a more concise version of the above code.
+
+```cpp
+int age = 25;
+
+string message = (age >= 18) ? "You are an adult" : "You are a minor";
+cout << message << endl;
+```
+
+#### Nested If-Else Statement
+
+We can also use nested if-else statements to check for multiple conditions.
+
+```cpp
+int age = 25;
+bool hasLicense = true;
+
+if (age >= 18) {
+  if (hasLicense) {
+    cout << "You can drive" << endl;
+  } else {
+    cout << "You cannot drive" << endl;
+  }
+} else {
+  cout << "You are a minor" << endl;
+}
+```

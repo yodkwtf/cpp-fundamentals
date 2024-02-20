@@ -264,3 +264,57 @@ if (age >= 18) {
   cout << "You are a minor" << endl;
 }
 ```
+
+#### Switch Statement
+
+We can use the switch statement to execute different blocks of code based on different values of a variable.
+
+```cpp
+enum Weather {
+   Sunny,
+   Rainy,
+   Cold
+};
+
+Weather today = Sunny;
+
+switch (today) {
+  case Sunny:
+    cout << "It's sunny today" << endl;
+    break;
+  case Rainy:
+    cout << "It's rainy today" << endl;
+    break;
+  case Cold:
+    cout << "It's cold today" << endl;
+    break;
+  default:
+    cout << "Invalid weather" << endl;
+}
+```
+
+##### Enums
+
+Enums are used to define a collection of constants. They are used to define a set of named integer constants.
+
+```cpp
+enum Weather {
+   Sunny,
+   Rainy,
+   Cold
+};
+```
+
+- `enum` is the keyword used to define an enumeration.
+- `Weather` is the name of the enumeration.
+- `Sunny`, `Rainy`, and `Cold` are the named constants.
+- By default, the value of the first constant is 0, and the value of each subsequent constant is incremented by 1.
+- We can also assign custom values to the constants.
+
+```cpp
+enum Weather {
+   Sunny = 1,
+   Rainy = 2,
+   Cold = 3
+};
+```

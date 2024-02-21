@@ -318,3 +318,73 @@ enum Weather {
    Cold = 3
 };
 ```
+
+## Loops
+
+Loops are used to execute a block of code multiple times. We can use `for`, `while`, and `do-while` loops in C++.
+
+#### For Loop
+
+```cpp
+for (int i = 0; i < 5; i++) {
+  cout << i << endl;
+}
+```
+
+#### While Loop
+
+```cpp
+int i = 0;
+
+while (i < 5) {
+  cout << i << endl;
+  i++;
+}
+```
+
+#### Do-While Loop
+
+```cpp
+int i = 0;
+
+do {
+  cout << i << endl;
+  i++;
+} while (i < 5);
+```
+
+All the above loops will print the following output -
+
+```bash
+0
+1
+2
+3
+4
+```
+
+The difference between the `while` and `do-while` loop is that the `do-while` loop will execute the block of code at least once, even if the condition is false.
+
+#### Infinite Loop
+
+Infinite loops are loops that run indefinitely. We can create an infinite loop using the following syntax -
+
+```cpp
+for (;;) {
+  cout << "Hello, World!" << endl;
+}
+```
+
+```cpp
+while (true) {
+  cout << "Hello, World!" << endl;
+}
+```
+
+```cpp
+do {
+  cout << "Hello, World!" << endl;
+} while (true);
+```
+
+This needs to be used with caution as it can lead to system crashes if not handled properly. It is generally used in scenarios where we want the program to run indefinitely, such as server applications.

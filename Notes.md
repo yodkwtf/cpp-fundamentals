@@ -388,3 +388,52 @@ do {
 ```
 
 This needs to be used with caution as it can lead to system crashes if not handled properly. It is generally used in scenarios where we want the program to run indefinitely, such as server applications.
+
+## Functions
+
+Functions are used to group a block of code that can be reused multiple times. We can define a function using the following syntax -
+
+```cpp
+void greet() {
+  cout << "Hello, World!" << endl;
+}
+```
+
+#### Function Parameters
+
+We can also pass parameters to a function.
+
+```cpp
+float add(float a, float b) {
+  return a + b;
+}
+```
+
+In the above code -
+
+- `float` is the return type of the function.
+- `add` is the name of the function.
+- `float a` and `float b` are the parameters of the function.
+- `return a + b` is the return statement of the function.
+- `void` is used when the function does not return any value.
+
+#### Function Declaration and Definition
+
+We can declare a function at the top of the file and define it later in the file.
+
+```cpp
+// function declaration
+float add(float a, float b);
+
+int main() {
+  cout << add(5, 3) << endl; // 8
+  cout << add(10, 5) << endl; // 15
+
+  return 0;
+}
+
+// function definition
+float add(float a, float b) {
+  return a + b;
+}
+```

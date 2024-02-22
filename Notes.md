@@ -488,3 +488,30 @@ In the above code -
 - `&age` is the memory address of the `age` variable.
 - `(*age)++` is used to increment the value of the `age` variable.
 - `*age` is used to dereference the pointer and access the value of the `age` variable.
+
+#### Pointers with Arrays
+
+We can use pointers to access the elements of an array. The name of the array is a pointer to the first element of the array.
+
+```cpp
+int arr[5] = {1, 2, 3, 4, 5};
+int *ptr = arr; // points to address of first element
+
+cout << *ptr << endl; // 1
+cout << ptr << endl; // 0x61feec
+cout << &ptr << endl; // 0x61fee8
+
+
+ptr++; // points to address of second element
+
+cout << *ptr << endl; // 2
+cout << ptr << endl; // 0x61fef0
+```
+
+In the above code -
+
+- `int *ptr` is a pointer to an integer variable.
+- `arr` is the name of the array and is a pointer to the first element of the array.
+- `*ptr` is used to dereference the pointer and access the value of the `arr` variable.
+- `ptr++` is used to increment the pointer to point to the next element of the array.
+- `&ptr` is the memory address of the `ptr` variable.

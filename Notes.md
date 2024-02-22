@@ -437,3 +437,54 @@ float add(float a, float b) {
   return a + b;
 }
 ```
+
+## Pointers
+
+Pointers are used to store the memory address of another variable. This allows us to access the memory location of a variable and perform operations on it from a different location in the program.
+
+#### Pointers with Functions
+
+We can use pointers to modify the value of a variable from a function.
+
+###### Without Pointers
+
+```cpp
+void myBirthday(int age) {
+  age++;
+  cout << "Happy Birthday! You are " << age << " years old" << endl;
+}
+
+int main() {
+  int age = 25;
+  cout << age << endl; // 25
+  myBirthday(age); // Happy Birthday! You are 26 years old
+  cout << age << endl; // 25
+  return 0;
+}
+```
+
+So, the value of `age` is not modified in the `main` function even though it is modified in the `myBirthday` function. This is because the `age` variable is passed by value to the `myBirthday` function and a copy of the variable is created in the function and only the copy is modified.
+
+###### With Pointers
+
+```cpp
+void myBirthday(int *age) {
+  (*age)++;
+  cout << "Happy Birthday! You are " << *age << " years old" << endl;
+}
+
+int main() {
+  int age = 25;
+  cout << age << endl; // 25
+  myBirthday(&age); // Happy Birthday! You are 26 years old
+  cout << age << endl; // 26
+  return 0;
+}
+```
+
+In the above code -
+
+- `int *age` is a pointer to an integer variable.
+- `&age` is the memory address of the `age` variable.
+- `(*age)++` is used to increment the value of the `age` variable.
+- `*age` is used to dereference the pointer and access the value of the `age` variable.

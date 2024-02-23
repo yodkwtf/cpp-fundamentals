@@ -573,3 +573,46 @@ class Person {
     int age;
 };
 ```
+
+#### Constructors
+
+Constructors are functions that are automatically called when an object is created from a class. They make it easy to initialize the object.
+
+There are 2 rules for constructors -
+
+1. The constructor has the same name as the class.
+2. The constructor does not have a return type.
+
+###### Creating a Constructor
+
+```cpp
+class Person {
+  public:
+    string name;
+    int age;
+
+    Person(string name, int age) {
+      name = name;
+      age = age;
+    }
+};
+```
+
+In the above code -
+
+- `Person` is the name of the class
+- `Person(string name, int age)` is the constructor
+- `name` and `age` are the parameters of the constructor
+
+###### Object Creation with Constructor
+
+```cpp
+int main() {
+  Person person1("John Doe", 25);
+
+  cout << person1.name << endl; // John Doe
+  cout << person1.age << endl; // 25
+
+  return 0;
+}
+```

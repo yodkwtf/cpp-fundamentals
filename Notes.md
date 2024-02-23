@@ -773,3 +773,58 @@ int main() {
   return 0;
 }
 ```
+
+### Polymorphism
+
+Polymorphism is used to perform a single action in different ways. It allows us to define a method in the base class and override it in the derived class.
+
+###### Creating a Base Class
+
+```cpp
+class Animal {
+  public:
+    void sound() {
+      cout << "Animal sound" << endl;
+    }
+};
+```
+
+###### Creating a Derived Class
+
+```cpp
+class Dog : public Animal {
+  public:
+    void sound() {
+      cout << "Barking..." << endl;
+    }
+};
+
+class Cat : public Animal {
+  public:
+    void sound() {
+      cout << "Meowing..." << endl;
+    }
+};
+```
+
+In the above code -
+
+- `sound` is a method of the `Animal` class
+- `Dog` and `Cat` inherit the `sound` method from the `Animal` class
+- `sound` is overridden in the `Dog` and `Cat` classes
+
+**Overriding** - When a method in the derived class has the same name and signature as a method in the base class, it is called overriding. The method in the derived class overrides the method in the base class.
+
+###### Using Polymorphism
+
+```cpp
+int main() {
+  Dog dog1;
+  dog1.sound(); // Barking...
+
+  Cat cat1;
+  cat1.sound(); // Meowing...
+
+  return 0;
+}
+```

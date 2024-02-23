@@ -708,3 +708,68 @@ int main() {
 ```
 
 Since the `Name` and `Age` members are private, we cannot access them directly from outside the class.
+
+### Inheritance
+
+Inheritance is used to create a new class from an existing class. The new class is called the derived class and the existing class is called the base class.
+
+###### Creating a Base Class
+
+```cpp
+class Animal {
+  private:
+    string Name;
+    int Age;
+
+  public:
+    Animal(string name, int age) {
+      Name = name;
+      Age = age;
+    }
+
+    void eat() {
+      cout << "Eating..." << endl;
+    }
+
+    void sayName() {
+      cout << "My name is " << Name << endl;
+    }
+};
+```
+
+###### Creating a Derived Class
+
+```cpp
+class Dog : public Animal {
+  public:
+    // Dog constructor (calls Animal constructor)
+    Dog(string name, int age) : Animal(name, age) {
+    }
+
+    // Dog method (overrides Animal method, if any)
+    void bark() {
+      cout << "Barking..." << endl;
+    }
+};
+```
+
+In the above code -
+
+- `Dog` is the name of the derived class
+- `: public Animal` is used to inherit from the `Animal` class
+- `Dog(string name, int age) : Animal(name, age)` is the constructor of the `Dog` class that calls the constructor of the `Animal` class
+- `bark` is a method of the `Dog` class
+- `Dog` inherits the `eat` and `sayName` methods from the `Animal` class
+
+###### Using Inheritance
+
+```cpp
+int main() {
+  Dog dog1("Buddy", 5);
+  dog1.eat(); // Eating...
+  dog1.sayName(); // My name is Buddy
+  dog1.bark(); // Barking...
+
+  return 0;
+}
+```

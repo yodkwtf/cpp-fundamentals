@@ -696,6 +696,7 @@ In the above code -
 ```cpp
 int main() {
   Person person1;
+  // person1.Name = "John Doe"; // error
   person1.setName("John Doe");
   person1.setAge(25);
 
@@ -705,3 +706,5 @@ int main() {
   return 0;
 }
 ```
+
+Since the `Name` and `Age` members are private, we cannot access them directly from outside the class.

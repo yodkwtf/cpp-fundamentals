@@ -574,7 +574,7 @@ class Person {
 };
 ```
 
-#### Constructors
+### Constructors
 
 Constructors are functions that are automatically called when an object is created from a class. They make it easy to initialize the object.
 
@@ -612,6 +612,40 @@ int main() {
 
   cout << person1.name << endl; // John Doe
   cout << person1.age << endl; // 25
+
+  return 0;
+}
+```
+
+### Class Methods
+
+Methods are functions that are defined inside a class. They can be used with objects of the class. Methods have access to the data members of the class.
+
+###### Creating a Method
+
+```cpp
+class Person {
+  public:
+    string name;
+    int age;
+
+    Person(string name, int age) {
+      name = name;
+      age = age;
+    }
+
+    void display() {
+      cout << "Name: " << name << ", Age: " << age << endl;
+    }
+};
+```
+
+###### Using a Method
+
+```cpp
+int main() {
+  Person person1("John Doe", 25);
+  person1.display(); // Name: John Doe, Age: 25
 
   return 0;
 }

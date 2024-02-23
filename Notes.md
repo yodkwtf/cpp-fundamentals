@@ -650,3 +650,58 @@ int main() {
   return 0;
 }
 ```
+
+### Encapsulation
+
+Encapsulation is used to restrict access to the members of a class and to prevent the data from being modified by accident.
+
+- Access specifiers are used to implement encapsulation
+- `public` members are accessible from outside the class
+- `private` members are only accessible from within the class
+- Can create public methods to access (get) and modify (set) private members
+
+```cpp
+class Person {
+  private:
+    string Name;
+    int Age;
+
+  public:
+    // Setters
+    void setName(string name) {
+      Name = name;
+    }
+    void setAge(int age) {
+      Age = age;
+    }
+
+    // Getters
+    string getName() {
+      return Name;
+    }
+    int getAge() {
+      return Age;
+    }
+};
+```
+
+In the above code -
+
+- `setName` and `setAge` are the setter methods
+- `getName` and `getAge` are the getter methods
+- `Name` and `Age` are the private members and cannot be accessed directly from outside the class
+
+###### Using Encapsulation
+
+```cpp
+int main() {
+  Person person1;
+  person1.setName("John Doe");
+  person1.setAge(25);
+
+  cout << person1.getName() << endl; // John Doe
+  cout << person1.getAge() << endl; // 25
+
+  return 0;
+}
+```

@@ -515,3 +515,61 @@ In the above code -
 - `*ptr` is used to dereference the pointer and access the value of the `arr` variable.
 - `ptr++` is used to increment the pointer to point to the next element of the array.
 - `&ptr` is the memory address of the `ptr` variable.
+
+## Classes and Objects
+
+Classes are used to define a blueprint for creating objects. An object is an instance of a class.
+
+###### Class Declaration
+
+```cpp
+class Person {
+  public:
+    string name;
+    int age;
+};
+```
+
+In the above code -
+
+- `class` is the keyword used to define a class
+- `Person` is the name of the class
+- `public` is the access specifier
+- `string name` and `int age` are the data members of the class
+
+###### Object Creation
+
+```cpp
+int main() {
+  Person person1;
+  person1.name = "John Doe";
+  person1.age = 25;
+
+  cout << person1.name << endl; // John Doe
+  cout << person1.age << endl; // 25
+
+  return 0;
+}
+```
+
+In the above code -
+
+- `Person` is the name of the class
+- `person1` is the name of the object
+- `person1.name` and `person1.age` are the data members of the object
+- `.` is the member access operator
+
+#### Access Specifiers
+
+- `public` - Members are accessible from outside the class
+- `private` - Members are only accessible from within the class
+- `protected` - Members are accessible from within the class and its derived classes
+- By default, the access specifier is `private`
+
+```cpp
+class Person {
+  private:
+    string name;
+    int age;
+};
+```

@@ -223,4 +223,38 @@ int main() {
 
 ## Inheritance
 
+Inheritance is the process of creating a new class from an existing class. The new class is called a derived class, and the existing class is called a base class.
+
+- The derived class inherits the attributes and methods of the base class
+- The derived class can also have its own attributes and methods
+
+```cpp
+class Chef {
+  public:
+    void makeChicken() {
+      cout << "The chef makes chicken" << endl;
+    }
+    void makeSalad() {
+      cout << "The chef makes salad" << endl;
+    }
+};
+
+class ItalianChef: public Chef {
+  public:
+    void makePasta() {
+      cout << "The chef makes pasta" << endl;
+    }
+};
+```
+
+###### Using Inheritance
+
+```cpp
+int main() {
+  ItalianChef chef;
+  chef.makeChicken(); // The chef makes chicken
+  chef.makePasta(); // The chef makes pasta
+}
+```
+
 ## Polymorphism

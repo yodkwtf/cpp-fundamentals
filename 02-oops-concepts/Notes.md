@@ -88,3 +88,49 @@ class Employee {
     string Department;
 };
 ```
+
+## Constructors
+
+A constructor is a function that is automatically called when an object is created. It is used to initialize the object's attributes.
+
+> As of now if we want to create 100 employees, we need to set the attributes of each employee manually. This is not efficient. We can use a constructor to initialize the attributes of an object when it is created.
+
+Currently, we are using a default constructor, which is provided by the compiler if we don't define one.
+
+###### Creating our own constructor
+
+```cpp
+class Employee {
+  public:
+    string Name;
+    int Age;
+    string Company;
+
+    Employee(string name, int age, string company) {
+      Name = name;
+      Age = age;
+      Company = company;
+    }
+};
+```
+
+###### Creating an object using a constructor
+
+```cpp
+int main() {
+  Employee employee1("John", 30, "Google");
+  employee1.introduce(); // Name - John, Age - 30, Company - Google
+
+  Employee employee2("Jane", 25, "Facebook");
+  employee2.introduce(); // Name - Jane, Age - 25, Company - Facebook
+
+  Employee employee3("Tom", 35, "Amazon");
+  employee3.introduce(); // Name - Tom, Age - 35, Company - Amazon
+}
+```
+
+#### Rule of Constructors
+
+- A constructor has the same name as the class
+- A constructor does not have a return type
+- Constructors need to be public (there can be special cases where we need a private constructor, but that is not common)

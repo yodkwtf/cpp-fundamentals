@@ -134,3 +134,50 @@ int main() {
 - A constructor has the same name as the class
 - A constructor does not have a return type
 - Constructors need to be public (there can be special cases where we need a private constructor, but that is not common)
+
+## Encapsulation
+
+Encapsulation is the process of wrapping up the data (attributes) and the code (methods) into a single unit called a class. It is used to restrict access to certain attributes and methods of a class to prevent the data from being modified by accident.
+
+#### Getters and Setters
+
+To access or modify the attributes of a class, we create our own public member functions or methods called getters and setters.
+
+- Getters are used to access the attributes of a class
+- Setters are used to modify the attributes of a class
+
+```cpp
+class Employee {
+  private:
+    int Salary;
+
+  public:
+    void setSalary(int salary) {
+      if (salary < 0) {
+        cout << "Salary cannot be negative" << endl;
+      } else {
+        Salary = salary;
+      }
+    }
+
+    int getSalary() {
+      return Salary;
+    }
+};
+```
+
+###### Using getters and setters
+
+```cpp
+int main() {
+  Employee employee1;
+  employee1.setSalary(50000);
+  cout << employee1.getSalary(); // 50000
+}
+```
+
+## Abstraction
+
+## Inheritance
+
+## Polymorphism

@@ -166,7 +166,7 @@ class Employee {
 };
 ```
 
-###### Using getters and setters
+###### Using Getters and Setters
 
 ```cpp
 int main() {
@@ -177,6 +177,49 @@ int main() {
 ```
 
 ## Abstraction
+
+Abstraction is the process of creating a simple model of a complex system. It hides the complex details of a system and only shows the necessary details of the object.
+
+In C++, we can create an abstract class using the `virtual` keyword.
+
+```cpp
+class AbstractEmployee {
+  virtual void askForPromotion() = 0;
+};
+```
+
+In the above example, `askForPromotion` is an abstract method. It is a method without a body. We use the `= 0` to make it an abstract method. We use the `virtual` keyword to make it an abstract class.
+
+#### Rules of Abstract Classes
+
+- An abstract class is a class that cannot be instantiated
+- An abstract class can have abstract methods (methods without a body)
+- Any class that inherits an abstract class must implement the abstract methods
+
+```cpp
+class Employee: public AbstractEmployee {
+  public:
+    void askForPromotion() {
+      if (Salary > 1000) {
+        cout << "You got a promotion" << endl;
+      } else {
+        cout << "Sorry, no promotion for you" << endl;
+      }
+    }
+};
+```
+
+If we don't implement the abstract method in the derived class, we will get an error.
+
+###### Using an Abstract Class
+
+```cpp
+int main() {
+  Employee employee1;
+  employee1.setSalary(50000);
+  employee1.askForPromotion(); // You got a promotion
+}
+```
 
 ## Inheritance
 

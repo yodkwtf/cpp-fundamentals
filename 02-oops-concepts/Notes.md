@@ -258,3 +258,191 @@ int main() {
 ```
 
 ## Polymorphism
+
+Polymorphism is the ability of an object to take on many forms. It is used to perform a single action in different ways.
+
+- Polymorphism is one of the primary features of OOP
+- Polymorphism allows us to perform a single action in different ways
+- Polymorphism is achieved by method overloading and method overriding
+
+#### Method Overloading
+
+Method overloading is the process of using the same method name for different methods. It is used to create multiple methods with the same name but different parameters.
+
+```cpp
+class Employee {
+  public:
+    void work() {
+      cout << "Employee is working" << endl;
+    }
+    void work(int hours) {
+      cout << "Employee is working for " << hours << " hours" << endl;
+    }
+};
+```
+
+###### Using Method Overloading
+
+```cpp
+int main() {
+  Employee employee;
+  employee.work(); // Employee is working
+  employee.work(8); // Employee is working for 8 hours
+}
+```
+
+#### Method Overriding
+
+Method overriding is the process of redefining a base class method in a derived class. It is used to create a new implementation of a method in the derived class.
+
+```cpp
+class Employee {
+  public:
+    virtual void work() {
+      cout << "Employee is working" << endl;
+    }
+};
+
+class Manager: public Employee {
+  public:
+    void work() {
+      cout << "Manager is working" << endl;
+    }
+};
+
+class Chef: public Employee {
+};
+```
+
+In the above example, we use the `virtual` keyword to make the `work` a virtual method. This first checks if the derived class has a method with the same name. If it does, it uses the derived class method. If it doesn't, it uses the base class method.
+
+###### Using Method Overriding
+
+```cpp
+int main() {
+  Manager manager;
+  manager.work(); // Manager is working
+
+  Chef chef;
+  chef.work(); // Employee is working
+}
+```
+
+#### Dynamic Polymorphism
+
+Dynamic polymorphism is the process of using the base class pointer to call the derived class method. It can be used to perform a single action for all the different types of derived classes since the base class pointer can point to any derived class object.
+
+```cpp
+int main() {
+  Employee *employees[3]; = {&employee, &manager, &chef};
+
+  for (int i = 0; i < 3; i++) {
+    employees[i]->work();
+  }
+}
+```
+
+If we didn't use base class pointers, we would need to make a separate call to the `work` method for each derived class object since each Employee class instance is from a different type of derived class. Imagine the efficiency of this when we have 1000 derived class objects.
+
+```cpp
+int main() {
+  Employee employee;
+  Manager manager;
+  Chef chef;
+
+  employee.work();
+  manager.work();
+  chef.work();
+}
+```
+
+## Abstraction vs Polymorphism
+
+Abstract classes are used to provide a common interface for all the derived classes which means it tells the derived class what to do but not how to do it. It is the responsibility of the derived class to implement the abstract methods.
+
+###### Abstract Class
+
+```cpp
+class AbstractEmployee {
+  virtual void startJob() = 0;
+  virtual void morningMeeting() = 0;
+  virtual void lunchBreak() = 0;
+  virtual void endJob() = 0;
+};
+```
+
+###### Derived Classes
+
+```cpp
+class Employee: public AbstractEmployee {
+  public:
+    void startJob() {
+      cout << "Employee starts the job" << endl;
+    }
+    void morningMeeting() {
+      cout << "Employee attends the morning meeting" << endl;
+    }
+    void lunchBreak() {
+      cout << "Employee takes a lunch break" << endl;
+    }
+    void endJob() {
+      cout << "Employee ends the job" << endl;
+    }
+};
+
+class Manager: public AbstractEmployee {
+  public:
+    void startJob() {
+      cout << "Manager starts the job" << endl;
+    }
+    void morningMeeting() {
+      cout << "Manager attends the morning meeting" << endl;
+    }
+    void lunchBreak() {
+      cout << "Manager takes a lunch break" << endl;
+    }
+    void endJob() {
+      cout << "Manager ends the job" << endl;
+    }
+};
+```
+
+In Polymorphism, the derived class may or may not implement the method of the base class. The base class method has a default implementation, and the derived class can override it if it wants to.
+
+###### Base Class
+
+```cpp
+class Employee {
+  public:
+    virtual void work() {
+      cout << "Employee is working" << endl;
+    }
+};
+```
+
+###### Derived Classes
+
+```cpp
+
+class Manager: public Employee {
+  public:
+    void work() {
+      cout << "Manager is working" << endl;
+    }
+};
+
+class Chef: public Employee {
+};
+```
+
+## Summary
+
+- OOP is a programming paradigm that is based on the concept of objects
+- A class is a blueprint for creating objects
+- An object is an instance of a class
+- A class has data members (attributes) and member functions (methods)
+- Encapsulation is the process of wrapping up the data and the code into a single unit called a class
+- Abstraction is the process of creating a simple model of a complex system
+- Inheritance is the process of creating a new class from an existing class
+- Polymorphism is the ability of an object to take on many forms
+- Polymorphism is achieved by method overloading and method overriding
